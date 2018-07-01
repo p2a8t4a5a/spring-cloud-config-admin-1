@@ -1,0 +1,67 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-cloud-config-server
+  profiles:
+    active: jdbc
+  cloud:
+    config:
+      label: master
+      discovery:
+        enabled: true
+      server:
+        encrypt.enabled: false
+        default-label: master
+        jdbc:
+          sql: SELECT conf_key, conf_value FROM config_properties where conf_name=? and conf_profile=? and conf_label=?
+  datasource:
+    druid:
+      #数据库连接
+      name: mysql
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring-cloud-config-server?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      #连接池配置: 初始化大小，最小，最大
+      initialSize: 5
+      minIdle: 10
+      max-active: 1000
+      #配置获取连接等待超时的时间
+      max-wait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      max-pool-prepared-statement-per-connection-size: 20
+      pool-prepared-statements: true
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=1000;druid.stat.logSlowSql=true
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall #,log4j
+      #合并多个DruidDataSource的监控数据
+      useGlobalDataSourceStat: true
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+       login-username: admin
+       login-password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  mvc:
+    throw-exception-if-no-handler-found: true
+#  thymeleaf:
+#    enabled: true
+#  resources:
+#    add-mappings: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

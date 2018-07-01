@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link href="https://cdn.bootcss.com/iview/2.14.0/styles/iview.css" rel="stylesheet">
+    <link href="app/ui/static/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.16.2/axios.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.bootcss.com/iview/2.14.0/iview.js"></script>
+
+<script type="module">
+
+    import router from "./app/ui/src/router/index.js"
+    import store from "./app/ui/src/store/index.js"
+
+    new Vue({
+        el: '#app',
+        router,
+        store
+    })
+</script>
+</html>

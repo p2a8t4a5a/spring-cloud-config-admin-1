@@ -1,0 +1,55 @@
+/*body {
+    padding: 0;
+    margin: 0;
+    background-color: #F1F2F7;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+    color: #777777;
+}*/
+
+body {
+    background-color: #EEEEEE;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.ivu-layout{
+    background: #EEEEEE;
+}
+
+.ivu-layout-header {
+    background: #FFFFFF;
+    height: 54px;
+    line-height: 54px;
+    border-bottom: 1px solid #e2e3e5;
+}
+
+.sc-logo {
+    color: #8CD0FB;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.ivu-layout-sider {
+    background: #EEEEEE;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.ivu-layout-content {
+    background: #EEEEEE;
+}
+
+.main-breadcrumb{
+    padding: 10px 0 10px 0;
+}
+
+.ivu-breadcrumb>span:last-child {
+    font-weight: inherit;
+    color: inherit;
+}
+
+
+
