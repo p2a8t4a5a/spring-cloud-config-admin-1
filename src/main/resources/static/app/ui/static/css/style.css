@@ -19,17 +19,29 @@ ol, ul {
     background: #EEEEEE;
 }
 
-.ivu-layout-header {
-    background: #FFFFFF;
-    height: 54px;
-    line-height: 54px;
+.sc-header{
+    display: flex;
+    background: #68bd45;
+    height: 64px;
+    line-height: 64px;
     border-bottom: 1px solid #e2e3e5;
 }
 
-.sc-logo {
-    color: #8CD0FB;
-    font-size: 1.2em;
-    font-weight: 600;
+.sc-logo-href{
+    display: flex;
+    user-select: none;
+}
+
+.sc-logo-img{
+    height: 44px;
+    margin-top: 9px;
+}
+
+.sc-logo-word {
+    color: #FFFFFF;
+    font-size: 2.6em;
+    font-weight: 400;
+    padding: 2px 0 0 10px;
 }
 
 .ivu-layout-sider {

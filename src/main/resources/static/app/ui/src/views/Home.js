@@ -1,7 +1,12 @@
 const Home = {
     template: `
 <Layout>
-    <Header><span class="sc-logo">Spring Cloud Config Center</span></Header>
+    <Header class="sc-header">
+      <a href="/" class="sc-logo-href">
+         <img class="sc-logo-img" src="app/ui/static/images/spring-cloud-icon.svg">
+         <span class="sc-logo-word">Spring Cloud Config Center</span>
+      </a>
+    </Header>
     <Layout>
         <Sider hide-trigger>
             <Card>
