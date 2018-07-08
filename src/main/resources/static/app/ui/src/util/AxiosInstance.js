@@ -1,5 +1,6 @@
 let AxiosInstance = axios.create({
-    baseURL:  'http://localhost:8888/admin/ui/config',
+    // baseURL:  '/admin/ui/config',
+    baseURL: 'http://localhost:8888/admin/ui/config',
     headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -7,7 +8,7 @@ let AxiosInstance = axios.create({
 });
 
 export const AxiosGet = (url, params) => {
-    return AxiosInstance.get(url, {headers: {'Content-Type': 'application/json;charset=UTF-8'}, data: params===undefined?{}:params})
+    return AxiosInstance.get(url, {headers: {'Content-Type': 'application/json;charset=UTF-8'}, data: params === undefined ? {} : params})
         .then(res => res)
         .catch(res => res);
 };
@@ -19,7 +20,7 @@ export const AxiosPost = (url, params) => {
 };
 
 export const AxiosDelete = (url, params) => {
-    return AxiosInstance.delete(url, {headers: {'Content-Type': 'application/json;charset=UTF-8'}, data: params===undefined?{}:params})
+    return AxiosInstance.delete(url, {headers: {'Content-Type': 'application/json;charset=UTF-8'}, data: params === undefined ? {} : params})
         .then(res => res)
         .catch(res => res);
 };

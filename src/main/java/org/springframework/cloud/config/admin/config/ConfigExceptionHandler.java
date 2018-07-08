@@ -38,7 +38,7 @@ public class ConfigExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NoHandlerFoundException.class)
     public CommonResult handleNoHandlerFoundException(NoHandlerFoundException e) {
-        return CommonResult.of(HttpStatus.NOT_FOUND.value(),HttpStatus.NOT_FOUND.getReasonPhrase());
+        return CommonResult.of(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase());
     }
 
 

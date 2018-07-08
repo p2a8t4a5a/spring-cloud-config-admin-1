@@ -10,12 +10,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "config_properties")
-@lombok.Data
 public class Config {
 
     @Id
-    @GeneratedValue(generator="idGenerator")
-    @GenericGenerator(name="idGenerator", strategy="uuid")
+    @GeneratedValue(generator = "idGenerator")
+    @GenericGenerator(name = "idGenerator", strategy = "uuid")
     @Column(name = "conf_id")
     private String id;
 
@@ -33,4 +32,63 @@ public class Config {
 
     @Column(name = "conf_label")
     private String label;
+
+    public Config() {
+    }
+
+    public Config(String key, String value, String namespace, String profile, String label) {
+        this.key = key;
+        this.value = value;
+        this.namespace = namespace;
+        this.profile = profile;
+        this.label = label;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 }

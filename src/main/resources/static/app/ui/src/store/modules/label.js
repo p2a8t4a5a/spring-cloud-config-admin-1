@@ -16,13 +16,17 @@ let label = {
                     }
                 })
             })
+        },
+        setCurrentLabel({commit}, namespace) {
+            commit("currentLabel", namespace);
         }
     }, mutations: {
         labels(state, data) {
             state.labels = data;
-            if (state.currentLabel === '') {
-                state.currentLabel = state.labels.length > 0 ? state.labels[0] : '';
-            }
+            state.currentLabel = state.labels.length > 0 ? state.labels[0] : '';
+        },
+        currentLabel(state, data) {
+            state.currentLabel = data;
         }
     }
 };

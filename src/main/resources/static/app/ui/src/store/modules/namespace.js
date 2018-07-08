@@ -23,9 +23,7 @@ let namespace = {
     }, mutations: {
         namespaces(state, data) {
             state.namespaces = data;
-            if (state.currentNamespace === '') {
-                state.currentNamespace = state.namespaces.length > 0 ? state.namespaces[0] : '';
-            }
+            state.currentNamespace = state.namespaces.length > 0 ? state.namespaces[0] : '';
         },
         currentNamespace(state, data) {
             state.currentNamespace = data;

@@ -16,13 +16,17 @@ let profile = {
                     }
                 })
             })
+        },
+        setCurrentProfile({commit}, namespace) {
+            commit("currentProfile", namespace);
         }
     }, mutations: {
         profiles(state, data) {
             state.profiles = data;
-            if (state.currentProfile === '') {
-                state.currentProfile = state.profiles.length > 0 ? state.profiles[0] : '';
-            }
+            state.currentProfile = state.profiles.length > 0 ? state.profiles[0] : '';
+        },
+        currentProfile(state, data) {
+            state.currentProfile = data;
         }
     }
 };
